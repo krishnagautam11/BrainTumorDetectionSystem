@@ -1,0 +1,49 @@
+ {% extends 'base.html'%}
+    {% block content%}
+    {% if messages %}
+        {% for message in messages %}
+         {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+        {% endfor %}
+
+    {% endif %}
+
+<div style="background: url('/media/img/images/homepage.jpg'); background-repeat:no-repeat;background-size:cover; color: white; height: 521px;  ">
+	
+<center>
+<div class="container-fluid" style="margin-top: 1%;padding:5%;width: 70%;">	
+	<div class="table-responsive ">
+	<table class="table table-striped table-bordered table-sm" style="background-color: white" >  
+    <thead style="background-color: #449898;color: white" class="text-white">  
+    <tr> 
+    	 
+        <th style="width: 20%">Id</th>  
+        <th>Feedback</th>  
+        <th style="width: 20%">User id </th>
+        
+    </tr>  
+    </thead>  
+    <tbody>  
+
+
+    
+	{% for or in Feedb_det %}  
+		<tr style="color: black;background-color: white">  
+	        <td style="width: 20%">{{ or.id }}</td>  
+	        <td>{{ or.Feedback }}</td>  
+	        <td  style="width: 20%">{{ or.Uid }}</td>  
+	        
+		</tr> 
+	{% endfor %} 
+
+    </tbody>  
+	</table>
+</div>
+</div>
+</center>
+
+
+</div>
+<br>
+
+    {% endblock%}

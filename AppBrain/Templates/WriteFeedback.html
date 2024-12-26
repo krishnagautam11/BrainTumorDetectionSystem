@@ -1,0 +1,51 @@
+ {% extends 'base.html'%}
+    {% block content%}
+    {% if messages %}
+        {% for message in messages %}
+         {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+        {% endfor %}
+
+    {% endif %}
+
+<div style="background: url('/media/img/images/homepage.jpg'); background-repeat:no-repeat;background-size:cover; color: white; height: 521px;  ">
+	
+<br>
+<br>
+<br>
+<div class="container" style="background-color: white;width: 50%;" >
+<form class="form-horizontal" action='/WriteFeedback/'  method="POST" id="signup-form">
+  {% csrf_token %}
+  <center>
+  <div>
+    <h2 style="color: #449898">Feedback</h2>
+  </div>
+  </center> 
+
+  <div class=" col-md-12">
+  	<textarea class="form-control" name="Feedback" required="" rows="10" id="Feedback" placeholder="Type Here...."></textarea>
+   <input type="hidden" name="hfuid" id="hfuid" value="{{did}}">
+  </div>
+
+  <center>
+
+    <div class="col-md-12">
+         <br>
+  <button type="submit" class="btn btn-primary">Submit</button>
+    <br>  <br>  <br>
+</div>
+</center>
+
+
+  </center>
+  <br>
+</form>
+ <br>
+</div>
+<br>
+<br>
+
+</div>
+<br>
+
+    {% endblock%}

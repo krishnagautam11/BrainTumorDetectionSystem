@@ -1,0 +1,241 @@
+ {% extends 'base.html'%}
+    {% block content%}
+    {% if messages %}
+        {% for message in messages %}
+         {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+        {% endfor %}
+
+    {% endif %}
+
+<div style="background: url('/media/img/images/homepage.jpg'); background-repeat:no-repeat;background-size:cover; color: white; ">
+	
+<br>
+<br>
+<br>
+<div class="container" style="background-color: white;width: 50%;" >
+<form class="form-horizontal" action='/AddDoctor/'  method="POST" id="form1">
+  {% csrf_token %}
+  <center>
+  <div>
+    <h2 style="color: #449898">Add Doctor</h2>
+    <hr>
+  </div>
+  </center> 
+
+  <div class="form-row">
+    <div class="col-md-4 ">
+      <label style="color: black"  for="validationTooltip01">First name</label>
+      <input type="text" class="form-control" name="First_name" id="First_name" placeholder="First name" value="" required>
+      
+    </div>
+    <div class="col-md-4 ">
+      <label style="color: black"  for="validationTooltip02">Last name</label>
+      <input type="text" class="form-control" name="Last_name" id="Last_name"  placeholder="Last name" value="" required>
+      
+    </div>
+    <div class="col-md-4 ">
+      <label style="color: black" for="validationTooltipUsername">Username</label>
+      <div class="input-group">
+        <input type="text" class="form-control" name="Username" id="Username" placeholder="Username" value="" required>
+        
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>First_name Last_name  Username  Dob Gender Phone Email
+  <br>
+  <div class="form-row">
+    <div class="col-md-4">
+      <label style="color: black" for="validationTooltip03">Dob</label>
+      <input type="date" class="form-control" name="Dob" id="Dob" placeholder="Dob" required>
+      
+    </div>
+    <div class="col-md-4 ">
+      <label style="color: black" for="validationTooltip04">Gender</label>
+      <select name="Gender" id="Gender" placeholder="Gender" class="form-control">
+        <option selected>Choose...</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+      
+    </div>
+    <div class="col-md-4 ">
+      <label style="color: black" for="validationTooltip05">Phone</label>
+      <input type="number" class="form-control" name="Phone" id="Phone"  placeholder="Phone" required>
+      
+    </div>
+  </div> 
+  <div class="col-md-12">
+     <br>
+      <label style="color: black" for="inputEmail4">Email</label>
+      <input type="email" class="form-control" name="Email" id="Email"  placeholder="Email">
+  </div>
+ 
+  <div class=" col-md-12">
+     <br>
+    <label style="color: black" for="inputAddress">Speciality</label>
+    <input type="text" class="form-control" name="Speciality" id="Speciality" placeholder="heart,brain etc">
+  </div>
+
+  <div class=" col-md-12">
+  	  <br>
+    <label style="color: black" for="inputAddress2">Address</label>
+    <input type="text"  class="form-control" name="Address" id="Address" placeholder="Address">
+  </div>
+  
+  <div class=" col-md-12">
+    <div class="row">
+  	  <br>
+    <div class=" col-md-6">
+
+      <label style="color: black" for="inputCity">City</label>
+      <input type="text" placeholder="City" class="form-control" name="City" id="City">
+    </div>
+    <div class=" col-md-1"></div>
+    <div class="col-md-6">
+      <label style="color: black" for="inputState">State</label>
+
+
+      <input type="text" placeholder="State" class="form-control" name="State" id="State">
+    </div>
+    <br>
+
+  </div>
+  </div>
+ 
+  <center>
+
+    <div class="col-md-12">
+         <br>
+         <input type="button" onclick="validate();" name="ButtonApply" value="Submit &#8250;&#8250;"  id="ButtonApply" class="btn btn-round btn-primary" />
+    <br>  <br>  <br>
+</div>
+</center>
+
+
+  </center>
+  <br>
+</form>
+ <br>
+</div>
+<br>
+<br>
+
+</div>
+<br>
+<script type="text/javascript">
+
+
+
+function validate()
+  {
+
+      if(document.getElementById('First_name').value != '')
+        {
+                                  
+         if(document.getElementById('Last_name').value != '')
+            {
+              if(document.getElementById('Username').value != '')
+              {
+                
+                if(document.getElementById('Dob').value != '')
+                {
+                  
+                    if(document.getElementById('Gender').value != '')
+                    {
+                           if(document.getElementById('Phone').value != '')
+                            {
+                                if(document.getElementById('Email').value != '')
+						                      {
+						                                  
+						         
+						              if(document.getElementById('Speciality').value != '')
+						              {
+						                
+						                if(document.getElementById('Address').value != '')
+						                {
+						                  
+						                    if(document.getElementById('City').value != '')
+						                    {
+						                           if(document.getElementById('State').value != '')
+						                            {
+						                                document.getElementById('form1').submit()
+						                                return true;
+						                             }
+						                            else
+						                            {
+						                              alert("Please enter  State");
+						                              return false;
+						                            }
+						                      
+						                    }
+						                    else
+						                    {
+						                      alert("Please enter City");
+						                      return false;
+						                    }						                  
+						                }
+						                else
+						                {
+						                  alert("Please enter Address");
+						                  return false;
+						                }
+						              }
+						              else
+						              {
+						                alert("Please  enter Speciality");
+						                return false;
+						              }
+						            						                
+						        }
+						        else
+						        {
+						          alert("Please enter Email");
+						          return false;
+						        }
+                             }
+                            else
+                            {
+                              alert("Please enter  Phone");
+                              return false;
+                            }
+                      
+                    }
+                    else
+                    {
+                      alert("Please enter Gender");
+                      return false;
+                    }
+                  
+                }
+                else
+                {
+                  alert("Please enter Dob");
+                  return false;
+                }
+
+              }
+              else
+              {
+                alert("Please  enter Username");
+                return false;
+              }
+            }     
+            else
+            {
+              alert("Please Enter the Last name");
+              return false;
+            }                
+        }
+        else
+        {
+          alert("Please enter First name");
+          return false;
+        }
+
+}
+
+</script>
+    {% endblock%}

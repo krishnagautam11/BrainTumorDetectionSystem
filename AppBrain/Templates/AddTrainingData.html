@@ -1,0 +1,489 @@
+ {% extends 'base.html'%}
+    {% block content%}
+
+    {% if messages %}
+        {% for message in messages %}
+         {% if message.tags %}  <script>alert("{{ message }}")</script> {% endif %}
+
+        {% endfor %}
+
+    {% endif %}
+
+
+<div style="background: url('/media/img/images/homepage.jpg');background-repeat:no-repeat;background-size: cover;color: white;">
+<br>
+<br>
+<br>
+<div class="container" style="background-color: white;width: 45%;-webkit-box-shadow: 0 0 5px 5px #b5adad;-moz-box-shadow: 0 0 5px 5px #b5adad; box-shadow: 0 0 5px 5px #b5adad; " >
+<form class="form-horizontal" action='/AddTrainingData/'  method="POST" id="form1">
+  {% csrf_token %}
+  <center>
+  <div>
+    <h2 style="color: #449898">Add Training Data</h2>
+    <hr style="border-top: 1px solid #449898;"> 
+    <br>
+  </div>
+  </center> 
+
+
+
+
+
+<div class="form-row">
+    <div class="col-md-4 text-center "style="margin-top: 5px">
+      <label style="color: black"  for="validationTooltip01">Headache</label>    
+    </div>
+ 
+    <div class="col-md-8 "style="margin-bottom: 10px">
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="Headache1" name="Headache" value="1">&nbsp;
+          <label for="Headache1"  style="color: black">YES</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
+
+          <input type="radio" id="Headache2" name="Headache" value="0">&nbsp;
+          <label for="Headache2"  style="color: black">NO</label>&nbsp;&nbsp;&nbsp;&nbsp;      
+        </div>
+    </div>
+  </div>
+
+  <br> <br> 
+
+  <div class="form-row">
+    <div class="col-md-4 text-center"style="margin-top: 5px">
+      <label style="color: black"  for="validationTooltip01">Seizures</label>    
+    </div>
+ 
+    <div class="col-md-8 "style="margin-bottom: 10px">
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="Seizures1" name="Seizures" value="1">&nbsp;
+          <label for="Seizures1"  style="color: black">YES</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
+
+          <input type="radio" id="Seizures2" name="Seizures" value="0">&nbsp;
+          <label for="Seizures2"  style="color: black">NO</label>&nbsp;&nbsp;&nbsp;&nbsp;      
+        </div>
+    </div>
+  </div>
+
+  <br> <br>
+
+
+ <div class="form-row">
+    <div class="col-md-4 text-center"style="margin-top: 5px">
+      <label style="color: black"  for="validationTooltip01">Nausea</label>    
+    </div>
+ 
+    <div class="col-md-8 "style="margin-bottom: 10px">
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="Nausea1" name="Nausea" value="1">&nbsp;
+          <label for="Nausea1"  style="color: black">YES</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
+
+          <input type="radio" id="Nausea2" name="Nausea" value="0">&nbsp;
+          <label for="Nausea2"  style="color: black">NO</label>&nbsp;&nbsp;&nbsp;&nbsp;      
+        </div>
+    </div>
+  </div>
+
+  <br> <br>
+
+
+
+ <div class="form-row">
+    <div class="col-md-4 text-center"style="margin-top: 5px">
+      <label style="color: black"  for="validationTooltip01">Vomiting</label>    
+    </div>
+ 
+    <div class="col-md-8 "style="margin-bottom: 10px">
+         <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="Vomiting1" name="Vomiting" value="1">&nbsp;
+          <label for="Vomiting1"  style="color: black">YES</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
+
+          <input type="radio" id="Vomiting2" name="Vomiting" value="0">&nbsp;
+          <label for="Vomiting2"  style="color: black">NO</label>&nbsp;&nbsp;&nbsp;&nbsp;      
+    </div>
+    </div>
+  </div>
+
+  <br> <br>
+
+ <div class="form-row">
+    <div class="col-md-4 text-center"style="margin-top: 5px">
+      <label style="color: black"  for="validationTooltip01">Fatique</label>    
+    </div>
+ 
+    <div class="col-md-8 "style="margin-bottom: 10px">
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="Fatique1" name="Fatique" value="1">&nbsp;
+          <label for="Fatique1"  style="color: black">YES</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
+
+          <input type="radio" id="Fatique2" name="Fatique" value="0">&nbsp;
+          <label for="Fatique2"  style="color: black">NO</label>&nbsp;&nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
+  </div>
+
+  <br> <br>
+
+
+
+ <div class="form-row">
+    <div class="col-md-4 text-center"style="margin-top: 5px">
+      <label style="color: black"  for="validationTooltip01">Drowsiness</label>    
+    </div>
+ 
+    <div class="col-md-8 "style="margin-bottom: 10px">
+         <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="Drowsiness1" name="Drowsiness" value="1">&nbsp;
+          <label for="Drowsiness1"  style="color: black">YES</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  
+
+          <input type="radio" id="Drowsiness2" name="Drowsiness" value="0">&nbsp;
+          <label for="Drowsiness2"  style="color: black">NO</label>&nbsp;&nbsp;&nbsp;&nbsp;     
+    </div>
+    </div>
+  </div>
+
+  <br> <br>
+
+
+ <div class="form-row">
+    <div class="col-md-4 text-center"style="margin-top: 5px">
+      <label style="color: black"  for="validationTooltip01">SleepProblem</label>    
+    </div>
+ 
+    <div class="col-md-8 "style="margin-bottom: 10px">
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="SleepProblem1" name="SleepProblem" value="1">&nbsp;
+          <label for="SleepProblem1"  style="color: black">YES</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
+
+          <input type="radio" id="SleepProblem2" name="SleepProblem" value="0">&nbsp;
+          <label for="SleepProblem2"  style="color: black">NO</label>&nbsp;&nbsp;&nbsp;&nbsp;      
+    </div>
+    </div>
+  </div>
+
+  <br> <br>
+
+
+
+ <div class="form-row">
+    <div class="col-md-4 text-center"style="margin-top: 5px">
+      <label style="color: black"  for="validationTooltip01">MemoryProblem</label>    
+    </div>
+ 
+    <div class="col-md-8 "style="margin-bottom: 10px">
+         <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="MemoryProblem1" name="MemoryProblem" value="1">&nbsp;
+          <label for="MemoryProblem1"  style="color: black">YES</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;
+
+          <input type="radio" id="MemoryProblem2" name="MemoryProblem" value="0">&nbsp;
+          <label for="MemoryProblem2"  style="color: black">NO</label>&nbsp;&nbsp;&nbsp;&nbsp;     
+    </div>
+    </div>
+  </div>
+
+  <br> <br>
+
+
+
+ <div class="form-row">
+    <div class="col-md-4 text-center"style="margin-top: 5px">
+      <label style="color: black"  for="validationTooltip01">ProblemInDailyActivity</label>    
+    </div>
+ 
+    <div class="col-md-8 "style="margin-bottom: 10px">
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="ProblemInDailyActivity1" name="ProblemInDailyActivity" value="1">&nbsp;
+          <label for="ProblemInDailyActivity1"  style="color: black">YES</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
+
+          <input type="radio" id="ProblemInDailyActivity2" name="ProblemInDailyActivity" value="0">&nbsp;
+          <label for="ProblemInDailyActivity1"  style="color: black">NO</label>&nbsp;&nbsp;&nbsp;&nbsp;      
+    </div>
+    </div>
+  </div>
+
+  <br> <br>
+
+
+
+ <div class="form-row">
+    <div class="col-md-4 text-center"style="margin-top: 5px">
+      <label style="color: black"  for="validationTooltip01">DifficultyInFineMotorSkills</label>    
+    </div>
+ 
+    <div class="col-md-8 "style="margin-bottom: 10px">
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="DifficultyInFineMotorSkills1" name="DifficultyInFineMotorSkills" value="1">&nbsp;
+          <label for="DifficultyInFineMotorSkills1"  style="color: black">YES</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
+
+          <input type="radio" id="DifficultyInFineMotorSkills2" name="DifficultyInFineMotorSkills" value="0">&nbsp;
+          <label for="DifficultyInFineMotorSkills2"  style="color: black">NO</label>&nbsp;&nbsp;&nbsp;&nbsp;     
+    </div>
+    </div>
+  </div>
+
+  <br> <br>
+
+
+
+ <div class="form-row">
+    <div class="col-md-4 text-center"style="margin-top: 5px">
+      <label style="color: black"  for="validationTooltip01">LossInVision</label>    
+    </div>
+ 
+    <div class="col-md-8 "style="margin-bottom: 10px">
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="LossInVision1" name="LossInVision" value="1">&nbsp;
+          <label for="LossInVision1"  style="color: black">YES</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
+
+          <input type="radio" id="LossInVision2" name="LossInVision" value="0">&nbsp;
+          <label for="LossInVision2"  style="color: black">NO</label>&nbsp;&nbsp;&nbsp;&nbsp;     
+    </div>
+    </div>
+  </div>
+
+  <br> <br>
+
+
+ <div class="form-row">
+    <div class="col-md-4 text-center"style="margin-top: 5px">
+      <label style="color: black"  for="validationTooltip01">HearingIssue </label>    
+    </div>
+ 
+    <div class="col-md-8 "style="margin-bottom: 10px">
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="HearingIssue1" name="HearingIssue" value="1">&nbsp;
+          <label for="HearingIssue1"  style="color: black">YES</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  
+
+          <input type="radio" id="HearingIssue2" name="HearingIssue" value="0">&nbsp;
+          <label for="HearingIssue2"  style="color: black">NO</label>&nbsp;&nbsp;&nbsp;&nbsp;      
+    </div>
+    </div>
+  </div>
+
+  <br> <br>
+
+
+
+
+ <div class="form-row">
+    <div class="col-md-4 text-center"style="margin-top: 5px">
+      <label style="color: black"  for="validationTooltip01">DifficultyInSwalling</label>    
+    </div>
+ 
+    <div class="col-md-8 "style="margin-bottom: 10px">
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="DifficultyInSwalling1" name="DifficultyInSwalling" value="1">&nbsp;
+          <label for="DifficultyInSwalling1"  style="color: black">YES</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp;  
+
+          <input type="radio" id="DifficultyInSwalling2" name="DifficultyInSwalling" value="0">&nbsp;
+          <label for="DifficultyInSwalling2"  style="color: black">NO</label>&nbsp;&nbsp;&nbsp;&nbsp;     
+    </div>
+    </div>
+  </div>
+
+  <br> <br>
+
+
+   <div class="form-row">
+    <div class="col-md-4 text-center"style="margin-top: 5px">
+      <label style="color: black"  for="validationTooltip01">BreathingIssue</label>    
+    </div>
+ 
+    <div class="col-md-8 "style="margin-bottom: 10px">
+        <div>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" id="BreathingIssue1" name="BreathingIssue" value="1">&nbsp;
+          <label for="BreathingIssue1"  style="color: black">YES</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; 
+
+          <input type="radio" id="BreathingIssue2" name="BreathingIssue" value="0">&nbsp;
+          <label for="BreathingIssue2"  style="color: black">NO</label>&nbsp;&nbsp;&nbsp;&nbsp;     
+    </div>
+    </div>
+  </div>
+
+  <br> <br>
+
+
+   <div class="form-row">
+    <div class="col-md-4 text-center"style="margin-top: 5px">
+      <label style="color: black"  for="validationTooltip01">Result</label>    
+    </div>
+ 
+    <div class="col-md-8 "style="margin-bottom: 10px">
+        <select  class="form-control" name="Result" id="Result" >
+      <option value="SELECT">SELECT</option>
+      <option value="1">HIGH</option>
+      <option value="0">LOW</option>
+      <option value="-1">NO Probability</option>
+    </select>
+    </div>
+  </div>
+
+  <br> <br>
+
+  <center>
+
+    <div class="col-md-12">
+         <br>
+
+  <input type="button" class="btn btn-primary" name="" value="SUBMIT >>" onclick="validate()">
+    <br>  <br>  <br>
+</div>
+</center>
+
+
+  </center>
+  <br>
+</form>
+ <br>
+</div>
+<br>
+<br>
+
+
+</div>
+<br> 
+
+<script type="text/javascript">
+  
+
+
+
+
+
+  function validate()
+  {
+
+       if(document.getElementById('Headache1').checked == true || document.getElementById('Headache2').checked == true)
+    {
+      if(document.getElementById('Seizures1').checked == true || document.getElementById('Seizures2').checked == true)
+      {
+        if(document.getElementById('Nausea1').checked == true || document.getElementById('Nausea2').checked == true)
+        {
+          if(document.getElementById('Vomiting1').checked == true || document.getElementById('Vomiting2').checked == true)
+          {      
+            if(document.getElementById('Fatique1').checked  == true || document.getElementById('Fatique2').checked  == true)
+            {
+              if(document.getElementById('Drowsiness1').checked ==true || document.getElementById('Drowsiness2').checked ==true)
+              {
+                if(document.getElementById('SleepProblem1').checked == true || document.getElementById('SleepProblem2').checked == true)
+                {
+                  if(document.getElementById('MemoryProblem1').checked == true || document.getElementById('MemoryProblem2').checked)
+                  {
+                    if(document.getElementById('ProblemInDailyActivity1').checked == true ||document.getElementById('ProblemInDailyActivity2').checked == true)
+                    {
+                      if(document.getElementById('DifficultyInFineMotorSkills1').checked == true || document.getElementById('DifficultyInFineMotorSkills2').checked == true)
+                      {
+                          if(document.getElementById('LossInVision1').checked == true || document.getElementById('LossInVision2').checked == true)
+                          {
+                              if(document.getElementById('HearingIssue1').checked == true || document.getElementById('HearingIssue2').checked == true)
+                              {
+
+                                  if(document.getElementById('DifficultyInSwalling1').checked == true || document.getElementById('DifficultyInSwalling2').checked == true)
+                                  {
+
+                                    if(document.getElementById('BreathingIssue1').checked == true || document.getElementById('BreathingIssue2').checked == true)
+                                    {
+
+                                        if(document.getElementById('Result').value != "SELECT")
+                                          {
+                                              
+                                              document.getElementById('form1').submit()
+                                              return true;
+                                          }
+                                          else
+                                          {
+                                              alert("Please Select Result");
+                                              return false;
+                                          }
+                                    }
+                                    else
+                                    {
+                                    alert("Please select BreathingIssue");
+                                    return false;
+                                    }
+                                  }
+                                  else
+                                  {
+                                  alert("Please select DifficultyInSwalling ");
+                                  return false;
+                                  }
+                              }
+                              else
+                              {
+                              alert("Please select HearingIssue");
+                              return false;
+                              }
+                          }
+                          else
+                          {
+                          alert("Please select LossInVision");
+                          return false;
+                          }                             
+                      }
+                      else
+                      {
+                      alert("Please select DifficultyInFineMotorSkills");
+                      return false;
+                      }
+                    }
+                    else
+                    {
+                    alert("Please  select ProblemInDailyActivity");
+                    return false;
+                    }
+                  }
+                  else
+                  {
+                  alert("Please select MemoryProblem");
+                  return false;
+                  }
+                }
+                else
+                {
+                alert("Please select SleepProblem");
+                return false;
+                }                             
+              }
+              else
+              {
+              alert("Please select Drowsiness");
+              return false;
+              }
+            }
+            else
+            {
+            alert("Please  select Fatique");
+            return false;
+            }                                                   
+          }
+          else
+          {
+          alert("Please select Vomiting");
+          return false;
+          }
+        }
+        else
+        {
+        alert("Please select Nausea");
+        return false;
+        }
+      }
+      else
+      {
+      alert("Please select Seizures");
+      return false;
+      }
+    }
+    else
+    {
+    alert("Please  select Headache");
+    return false;
+    }
+      
+}
+
+
+
+</script>
+
+
+{% endblock%}
+   
